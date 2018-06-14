@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="raspberry_pi_led" name="led_node" type="ledscript" output="screen"/>
+</launch>
