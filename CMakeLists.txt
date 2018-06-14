@@ -9,6 +9,7 @@ project(raspberry_pi_led)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   rospy
+  std_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -182,6 +183,20 @@ include_directories(
 #   # myfile2
 #   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 # )
+
+catkin_install_python(
+    PROGRAMS
+        scripts/ledscript
+    DESTINATION
+        ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+install(
+    FILES
+        launch/led.launch
+    DESTINATION
+        ${CATKIN_PACKAGE_BIN_DESTINATION}/launch    
+)
 
 #############
 ## Testing ##
